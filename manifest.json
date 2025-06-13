@@ -1,0 +1,22 @@
+{
+  "short_name": "Zunaid Invoice",
+  "name": "Zunaid Invoice App",
+  "description": "An invoice generator by Zunaid.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#e0e0e0",
+  "background_color": "#e0e0e0"
+}
+

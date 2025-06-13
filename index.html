@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zunaid Invoice</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#e0e0e0" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="pin-sar-icon" onclick="showOldSarModal()">
+      <img src="pin-icon.png" alt="Pin Old SAR" />
+    </div>
+    <div class="advance-sar-icon" onclick="showAdvanceSarModal()">
+      <img src="advance-icon.png" alt="Advance SAR" />
+    </div>
+    <h1>Zunaid Invoice</h1>
+    <div class="history-icon" onclick="toggleHistory()">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="History" />
+    </div>
+    <div id="entries"></div>
+    <div style="text-align: center; margin-top: 10px;">
+      <button onclick="addEntry()" class="btn">Add Entry</button>
+    </div>
+    <div class="total-section" id="totalBDT">
+      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170627.png" /> Total TK: 0
+    </div>
+    <div class="sar-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/6488/6488677.png" /> SAR Rate:
+      <input type="number" id="sarRate" value="32.5" step="0.01" oninput="onEntryChange()" />
+    </div>
+    <div class="total-section" id="totalSAR">
+      <img src="https://cdn-icons-png.flaticon.com/512/9377/9377574.png" />  Subtotal SAR: 0
+    </div>
+    <div class="breakdown-section" id="oldSarDisplay" style="display:none;">
+      Old SAR Balance: +<span id="oldSarValueText">0.00</span>
+    </div>
+    <div class="breakdown-section" id="advanceSarDisplay" style="display:none;">
+      Advance SAR: -<span id="advanceSarValueText">0.00</span>
+    </div>
+    <div class="total-section grand-total" id="grandTotalSarDisplay" style="display:none;">
+        <strong><span id="grandTotalSarLabel">Due SAR:</span> <span id="grandTotalSarValue">0.00</span></strong>
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="generateInvoice()">Download</button>
+    </div>
+    <div id="receipt-container" style="position: fixed; top: -9999px; left: -9999px;">
+        <div id="receipt"></div>
+    </div>
+    <div id="oldSarModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Set Old SAR</h2>
+        <input type="number" id="oldSarInput" placeholder="Enter Old SAR value" step="0.01">
+        <button id="saveOldSarBtn" class="btn">Save</button>
+      </div>
+    </div>
+    <div id="advanceSarModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Set Advance SAR</h2>
+        <input type="number" id="advanceSarInput" placeholder="Enter Advance SAR value" step="0.01">
+        <button id="saveAdvanceSarBtn" class="btn">Save</button>
+      </div>
+    </div>
+    <div class="history" id="history"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
